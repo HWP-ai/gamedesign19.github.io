@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>民主游戏设计理论发布门户</title>
+		<link rel="stylesheet" type="text/css" href="eric/reset.css">
+		<link rel="stylesheet" type="text/css" href="ltaoist/ui20.css">
+		<script>
+			function toggle(target, mode){
+				while(target.className.indexOf('group') == -1){
+					target = target.parentNode;
+				}
+				if(target.interval){
+					clearInterval(target.interval);
+				}
+				if(target.className.indexOf('open') == -1){
+					var speed = 200;
+				} else {
+					var speed = -200;
+				}
+				target.speed = speed;
+				if((mode !== false) && (speed > 0)){
+					var divs = document.getElementsByClassName('group');
+					var matchClass = (speed > 0) ? 'open' : 'close';
+					var matchSpeed = (speed > 0) ? 200 : -200;
+					for(var i=0; i<divs.length; ++i){
+						if(divs[i] == target){
+							continue;
+						}
+						console.log(divs[i], target);
+						if((divs[i].className.indexOf(matchClass) != -1) ||
+								(divs[i].speed == matchSpeed)){
+							clearInterval(divs[i].interval);
+							divs[i].className = 'group ' + matchClass;
+							toggle(divs[i], false);
+						}
+					}
+				}
+				target.interval = setInterval(function(){
+					if(!target.maxHeightPx){
+						target.maxHeightPx = 60;
+					}
+					if(target.reversePx){
+						target.maxHeightPx -= target.reversePx;
+						target.reversePx = 0;
+					}
+					target.maxHeightPx += speed;
+					console.log(target.maxHeightPx);
+					if(target.maxHeightPx < 60){
+						target.className = 'group close';
+						target.reversePx = speed;
+						target.speed = 0;
+						clearInterval(target.interval);
+						return;
+					}					
+					var prevHeight = target.clientHeight;
+					target.style.maxHeight = target.maxHeightPx + 'px';
+					if(target.clientHeight == prevHeight){
+						target.className = 'group open';
+						target.reversePx = speed;
+						target.speed = 0;
+						clearInterval(target.interval);
+						return;
+					}
+				}, 25);
+			}
+			window.onload = function(){
+				console.log(location.hash);
+				var hash = location.hash.slice(1);
+				if(hash){
+					var target = document.getElementById(hash);
+					if(target){
+						toggle(target);
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<h2>民主游戏设计互联网门户</h2>
+				<small>THE INTERNET PORTAL DEMOCRATIC GAME DESIGNING</small>
+			</div>
+			<p class="slogon">游戏制作者认为自由和自然是有内在关联的，而电子游戏是文化的一种集中的呈现方式。——游戏自然主义宣言</p>
+			<div id="sec1" class="group close">
+				<div class="title" onclick="toggle(this);">
+					<h1><i class="icon"></i>宣言</h1>
+					<a>查看详情<i class="icon2"></i></a>
+				</div>
+				<div class="content">
+					<p>原在 2019年 4 月公开于 <a target="_blank" href="https://indienova.com/groups/post/30132">https://indienova.com/groups/post/30132</a> 。</p>
+					<pre><code>
+游戏自然主义宣言
+=================
+
+游戏制作者认为自由和自然是有内在关联的，而电子游戏是文化的一种集中的呈现方式。游戏自然主义宣言规定了游戏制作者的一般责任，这些责任并不是关于品质的，而仅仅是他们认为是底线的。
+
+这些责任包括：
+
+1.不应当超出事物的本性的设定，除非这个设定符合事物的本性。
+
+2.等级制度应该和现实社会有一致性，而非扭曲人们的常识。
+
+3.不应该在不同的角色之间设置相同的特效，不同的角色应该有合乎其自身的品格的自然效果；不允许存在无个性的主体。
+
+4.音乐是游戏的灵魂，台词使得角色立体化，所以他们必须必重视。
+
+5.不许愚弄玩家。
+
+6.除非出自非人性的角色，谋杀应该有符合人性的原因。
+
+7.类型应当是特色而非条条框框。
+
+8.慎用电影和动作。
+
+9.最高负责人必须署名。
+
+10.最终决定权人必须署名。
+
+遵守这些规则的游戏是纯洁的（pure），不遵守这些规则的游戏是不纯洁的（impure）。
+
+
+2019.4.3 中国广东</code>
+					</pre>
+					<p>这个文本也有一个可以配合的<a target="_blank" href="https://indienova.com/groups/post/30132#cid6636">宣誓文本</a>。</p>
+				</div>
+			</div>
+			<div id="sec2" class="group close">
+				<div class="title" onclick="toggle(this);">
+					<h1><i class="icon"></i>参与方式</h1>
+					<a>查看详情<i class="icon2"></i></a>
+				</div>
+				<div class="content">
+					<p>您可以通过下面这些方式来参与到民主游戏设计：</p>
+					<ul>
+						<li>在你的电子游戏生产线上，贯彻游戏自然主义宣言中的条款，以提高电子游戏产品的质量，为你的玩家、消费者或其他涉众创造价值。</li>
+						<li>向有能力贯彻游戏自然主义宣言中的条款的游戏设计师，指导、建议或宣传游戏自然主义宣言。</li>
+						<li>购买符合游戏自然主义宣言中的条款的电子游戏产品，不要购买不符合游戏自然主义宣言中的条款的电子游戏产品。</li>					
+						<li>在适当的地方打出类似于“受影响于民主游戏设计”（Influenced by democratic game designing）的字样，如在游戏的系统内部，游戏的包装盒等位置。</li>
+						<li>总结你的经验，发展你的理论，参与正式的或非正式的讨论，说明如何能够有益于符合游戏自然主义宣言中的条款的电子游戏产品的质量、美学或体验，提高相关的社会实践。</li>
+						<li>在你可以负责的页面放一个到民主游戏设计的链接。</li>
+					</ul>
+					<p>逼迫任何人都不是民主游戏设计的初衷，但游戏设计相关人员有自主地约束自己的行为的资格。电子游戏不可能被消灭也不应该被消灭，因为生命的快乐是重要的，任何适当的营销手段民主游戏设计都是鼓励的。</p>
+				</div>
+			</div>
+			<div id="sec3" class="group close">
+				<div class="title" onclick="toggle(this);">
+					<h1><i class="icon"></i>正面评价</h1>
+					<a>查看详情<i class="icon2"></i></a>
+				</div>
+				<div class="content">
+					<p>有大量的好的作品，下列这些作品不一定是完美的，但被认为是值得肯定和研究其设计的作品，且符合民主游戏设计中的条款：</p>
+					<div class="cover">
+						<img src="cover__/Final_Fantasy.jpg">
+						<p><a target="_blank" href="https://www.finalfantasy.com/">最终幻想（Final Fantasy）</a>是由日本SQUARE公司Cyberlore Studios, Inc.研制的角色扮演游戏。2003年4月1日 SQUARE 与 ENIX 合并成为史克威尔艾尼克斯公司。</p>
+					</div>
+					<div class="cover">
+						<img src="cover__/Chinese_Paladin.jpg">
+						<p><a target="_blank" href="http://www.softstar.net.cn/">仙剑奇侠传</a>是由中国台湾大宇资讯股份有限公司（简称“大宇资讯”或“大宇”）旗下发行的系列电脑游戏，迄今已发行八款单机角色扮演游戏。</p>
+					</div>				
+					<div class="cover">
+						<img src="cover__/Starcraft.jpg">
+						<p><a target="_blank" href="https://starcraft.com/en-us/">星际争霸（StarCraft）</a>是美国暴雪娱乐制作发行的一款即时战略游戏。（系列）游戏设计了广泛的作战单位，其科幻内容、平衡性等方面也相当地让人称赞。</p>
+					</div>							
+					<div class="cover">
+						<img src="cover__/Majesty.jpg">
+						<p><a target="_blank" href="http://www.majestyquest.com/">王权：幻想王国（Majesty: The Fantasy Kingdom Sim）</a>是由美国Cyberlore Studios, Inc.研制的即时战略游戏，2D欧美奇幻风格。</p>
+					</div>
+					<div class="cover">
+						<img src="cover__/yinyangshi.jpg">
+						<p><a target="_blank" href="https://yys.163.com/">阴阳师</a>是由中国网易移动游戏公司自主研发的3D日式和风回合制RPG手游，游戏剧情以日本平安时代为背景。</p>
+					</div>
+					<p>这个列表主要的考虑是：对设计师区分和判断的作用、知名度、多样性。</p>		
+				</div>
+			</div>
+			<div id="sec4" class="group close">
+				<div class="title" onclick="toggle(this);">
+					<h1><i class="icon"></i>游戏类型理论</h1>
+					<a>查看详情<i class="icon2"></i></a>
+				</div>
+				<div class="content">
+					<p>游戏类型是民主游戏设计关心的重要理论。游戏的类型化和体现为特定的类型的游戏的提高和完善，是民主游戏设计的重要探究问题。当前，民主游戏设计的理论建设和实践体系建设才刚刚开始，详情可关注<a target="_blank" href="https://indienova.com/groups/388">民主游戏设计开放式议题</a>。</p> 
+				</div>
+			</div>
+			<div id="sec5" class="group close">
+				<div class="title" onclick="toggle(this);">
+					<h1><i class="icon"></i>资源</h1>
+					<a>查看详情<i class="icon2"></i></a>
+				</div>
+				<div class="content">
+					<p>
+						<a target="_blank" href="https://www.gushiwen.org/guwen/shijing.aspx">诗经</a>
+					</p>
+					<p>
+						<a target="_blank" href="https://www.17173.com/">17173资讯</a>
+					</p>
+					<p>
+						<a target="_blank" href="https://indienova.com/">indienova</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="foot-main">
+				<a href="https://gamedesign19.github.io/index.html">门户</a><span class="seq">|</span><a target="_blank" href="https://indienova.com/groups/388/list/discuss">公开议题</a>
+			</div>
+		</div>
+	</body>
+</html>

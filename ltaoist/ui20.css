@@ -1,0 +1,166 @@
+body{
+	color: #333;
+}
+
+p{
+	line-height: 2;
+}
+
+pre{
+	white-space:pre-wrap;
+	white-space:-moz-pre-wrap;
+	white-space:-pre-wrap;
+	white-space:-o-pre-wrap;
+	word-wrap:break-word;
+	line-height: 2;
+	margin: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+a{
+	color: #10e100;
+}
+
+ul{
+	list-style-type: disc;
+    margin-left: 40px;
+    line-height: 3;
+    margin-top: 20px;
+    font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.main{
+	width: 1154px;
+	margin: 0 auto;
+	padding-bottom: 160px;
+}
+
+.header{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.header h2{
+	font-weight: bold;
+	font-size: 65px;
+	margin: 80px 0 20px;
+	line-height: 60px;
+}
+
+.header small{
+	font-weight: bold;
+	font-size: 20px;
+	color: #d2d2d2;
+}
+
+.group{
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+	max-height: 60px;
+	overflow: hidden;
+}
+
+.title{
+	background: #f8f8f8;
+	position: relative;
+	cursor: pointer;
+}
+
+.title h1{
+	font-size: 26px;
+	line-height: 60px;
+	margin-left: 40px;
+}
+
+.title a{
+	float: right;
+	position: absolute;
+	right: 40px;
+	top: 7px;	
+	line-height: 48px;
+	color: #999;
+	transition: color 1s;
+	-moz-transition: color 1s;
+	-webkit-transition: color 1s;
+	-o-transition: color 1s;
+}
+
+.title:hover a{
+	color: #10e100;
+	
+}
+
+.icon{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('icon.png');
+	line-height: 60px;
+	vertical-align: center;
+	margin-right: 18px;
+}
+
+.icon2{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('icon2.png');
+	line-height: 60px;
+	vertical-align: center;
+	margin-right: 18px;
+	margin-left: 18px;
+}
+
+.slogon{
+	margin: 80px 0;
+	text-indent: 40px;
+	font-size: 20px;
+}
+
+.content{
+    margin-left: 72px;
+    margin-top: 40px;
+    margin: 40px 60px 40px 72px;
+}
+
+.cover{
+	min-height: 280px;
+    position: relative;
+    margin-top: 40px;
+    padding-right: 40px;
+    border-bottom: 1px solid #ccc;
+	padding: 10px 40px 20px 320px;
+	margin-bottom: 20px;
+}
+
+.cover img{
+	width: 220px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.foot{
+	background: #000;
+	min-height: 40px;
+	padding: 60px 40px;
+	color: #f0f0f0;
+}
+
+.foot-main{
+	width: 1154px;
+	margin: 0 auto;
+}
+
+.foot a{
+	color: #f0f0f0;
+	display: inline-block;
+	margin-right: 40px;
+	text-decoration: none;
+}
+
+.foot .seq{
+	margin-right: 40px;
+}
